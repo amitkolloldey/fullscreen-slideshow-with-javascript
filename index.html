@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Fullscreen Slideshow</title>
+
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        body, html {
+            height: 100%;
+            position: relative;
+        }        
+        body {
+            background-color: #000;
+        } 
+        h1 {
+            background: rgba(0, 0, 0, 0.3) none repeat scroll 0 0;
+            color: #fff;
+            display: table-cell;
+            font-size: 500%;
+            margin: 0;
+            text-align: center;
+            vertical-align: middle;
+        }
+        div.container {
+            display: table;
+            height: 100%;
+            padding: 100px;
+            width: 100%;
+        }  
+    </style>
+</head>
+
+<body> 
+
+    <div class="container"> 
+        <h1>Fullscreen Slideshow</h1> 
+    </div>
+    <!-- /.container -->
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script> 
+var images = ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg'];
+var totalPics = images.length;
+var i = 0;
+function loop() {
+	if(i > (totalPics - 1)){
+		i = 0;
+	}
+    document.body.style.backgroundImage = "url('img/"+images[i]+"')"; 
+	i++;
+	loopTimer = setTimeout('loop()',3000);
+}
+loop();
+</script>    
+</body>
+
+</html>
